@@ -16,6 +16,8 @@ config.initialize().then(async (connection) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
+  app.get("/", (req, res) => res.send("The Social Server"));
+
   //* Authentication route
   app.use("/user", authrouter);
 
