@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authrouter = void 0;
+const express_1 = require("express");
+const authentication_controller_1 = require("../controllers/authentication.controller");
+const authrouter = (0, express_1.Router)();
+exports.authrouter = authrouter;
+// authrouter.get("/posts", AuthenticationController.showPosts);
+authrouter.get("/decode-jwt", authentication_controller_1.AuthenticationController.decodeJwt);
+authrouter.post("/signup", authentication_controller_1.AuthenticationController.createNewAccount);
+authrouter.post("/login", authentication_controller_1.AuthenticationController.login);
+authrouter.post("/details", authentication_controller_1.AuthenticationController.getUserDetails);
