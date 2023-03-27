@@ -8,7 +8,7 @@ import { storyRouter } from "./routes/story.routes";
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.get("/", (req, res) => res.send("The Social Server"));
+console.log("before db connection");
 
 config.initialize().then(async (connection) => {
   if (connection.isInitialized) {
@@ -17,6 +17,8 @@ config.initialize().then(async (connection) => {
   app.set("port", port);
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
+
+  app.get("/", (req, res) => res.send("The Social Server"));
 
   //* Authentication route
   app.use("/user", authrouter);
