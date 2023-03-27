@@ -6,11 +6,11 @@ import { UserEntity } from "./database/entity/user.entity";
 
 const connectionOptions: DataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
-  port: 5432,
+  host: "containers-us-west-167.railway.app",
+  port: 5860,
   username: "postgres",
-  password: "Shubham@321",
-  database: "thesocial",
+  password: "2YEmVsOmaEQ5EGNBfFfe",
+  database: "railway",
   entities: [UserEntity, PostEntity, StoryEntity],
   synchronize: true,
   dropSchema: false,
