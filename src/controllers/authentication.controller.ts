@@ -103,7 +103,7 @@ export class AuthenticationController {
     let userdata = await UserRepository.findUserPassword(req, res, useremail);
     let basePassword = userdata!.userpassword;
 
-    // ! Compare both passwords
+    // ! Compare passwords
     bcrypt.compare(
       userpassword,
       basePassword,
